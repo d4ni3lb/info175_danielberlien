@@ -4,7 +4,6 @@ def cenitpolar():
         encriptado = []
         palabra = raw_input("Ingrese la frase a encriptar con cenit-polar: ")
         palabra = palabra.lower()
-        print "probando"
         for x in range(0,len(palabra)):
                 if(palabra[x] == "c"): encriptado.append("p")
                 elif(palabra[x] == "e"): encriptado.append("o")
