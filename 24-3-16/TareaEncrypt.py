@@ -1,16 +1,6 @@
 import Tkinter
 
 #Funciones encriptador
-cenit = False
-def sel(i):
-	if i == 1:
-		cenit = False
-		print ("Cenit falso")
-	else:
-		cenit = True
-		print ("cenit verd")
-
-
 
 
 #Interfaz grafica
@@ -25,11 +15,25 @@ inputText.pack()
 label2 = Tkinter.Label(mainWindow,anchor="nw",height="2",text="Seleccione el tipo de encriptacion: ")
 label2.pack()
 
+radioFrame = Tkinter.Frame(mainWindow) #Creado frame para organizar los radio buttons horizontalmente
+radioFrame.pack()
 
-rButton1 = Tkinter.Radiobutton(mainWindow, text = "Cenit-Polar",command=sel(2))
-rButton1.pack()
+v = Tkinter.IntVar()
 
+rButton1 = Tkinter.Radiobutton(radioFrame, text = "Cenit-Polar",variable = v, value = 1)
+rButton1.grid(row=0,column=0)
 
+rButton2 = Tkinter.Radiobutton(radioFrame, text = "Cesar",variable = v, value = 2)
+rButton2.grid(row=0,column=2)
+
+saltosFrame = Tkinter.Frame(mainWindow)
+saltosFrame.pack()
+
+label3 = Tkinter.Label(saltosFrame,anchor="w",height="2",text="Seleccione la cantidad de saltos para la encriptacion cesar: ")
+label3.grid(row=0,column=0)
+
+saltosEntry = Tkinter.Entry(saltosFrame,width="2")
+saltosEntry.grid(row=0,column=1)
 
 
 
